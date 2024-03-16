@@ -1,12 +1,12 @@
 {% set name = "yatiml" %}
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4d23bfd7bbf45ae603c08fcb70d0c86404934a0cef24fb77b532705ff195fc92
+  sha256: 4761a9da7f3e95e80eccedd24e64326962c63394c7bd4703a1f3122cebdccc79
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - ruamel.yaml >=0.15.71,<=0.17.21,!=0.17.5
+    - pyyaml >=5.1,!=5.4.1
     - typing_extensions
 
 test:
