@@ -1,12 +1,12 @@
 {% set name = "yatiml" %}
-{% set version = "0.11.0" %}
+{% set version = "0.11.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4761a9da7f3e95e80eccedd24e64326962c63394c7bd4703a1f3122cebdccc79
+  sha256: 354cefe305e45a557eda18cd3adc7680a178b4a4ebf68606404bf967fb7a72af
 
 build:
   noarch: python
