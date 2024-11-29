@@ -5,22 +5,22 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 354cefe305e45a557eda18cd3adc7680a178b4a4ebf68606404bf967fb7a72af
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
     - python >=3.7
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pyyaml >=5.1,!=5.4.1
     - typing_extensions
 
@@ -29,6 +29,7 @@ test:
     - {{ name }}
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
